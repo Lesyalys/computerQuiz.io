@@ -1,28 +1,17 @@
 {
   "name": "victorinastudy",
+  "private": true,
   "version": "1.0.0",
-  "description": "<h1 align = \"center\">Computer Quiz for NVSU</h1>\r <a href = \"https://nvsu.ru/\" target=\"_blink\"><img src=\"/public/img/logoNVSU2.png\"></a>",
-  "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev" : "vite",
+    "dev": "vite",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "build": "vite build",
     "preview": "vite preview"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Lesyalys/vicrotina.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Lesyalys/vicrotina/issues"
-  },
-  "homepage": "https://github.com/Lesyalys/vicrotina#readme",
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "vite": "^6.3.3"
   },
   "dependencies": {
