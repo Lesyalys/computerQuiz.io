@@ -5,7 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev" : "vite"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/Lesyalys/vicrotina/issues"
   },
-  "homepage": "https://github.com/Lesyalys/vicrotina#readme"
+  "homepage": "https://github.com/Lesyalys/vicrotina#readme",
+  "devDependencies": {
+    "vite": "^6.3.3"
+  },
+  "dependencies": {
+    "@rive-app/canvas": "^2.27.1"
+  }
 }

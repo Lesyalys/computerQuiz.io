@@ -8,42 +8,40 @@
     <link rel="stylesheet" href="css/style.css" type="text/css" id="mode">
 </head>
 <body>
-    <!-- <img id = "logoNVSU" src="./public/img/logoNVSU.png"> -->
+
     <div class="container">
-        <!-- <div id="headH1">  -->
-            <img id = "logoNVSU" src="./public/imgLight/logoNVSU.png">
+            <div id="them"> <canvas id ="logoNVSU"><canvas></canvas> </div>
+            <!-- <canvas id ="logoNVSU"><canvas> -->
             <h1>Своя Игра - Викторина по ЭВМ</h1>
-            
-    <!-- </div> -->
         
         <div class="setup">
             <h2>Настройка команд</h2>
             <div class="teams-container" id="teamsContainer">
-                <!-- Здесь будут поля для ввода названий команд -->
             </div>
             <div class="button-area">
-                <div class="button add" id="addTeam">Добавить команду</div>
+                <canvas id="addTeam"></canvas> 
+                <!-- <div class="button add" id="addTeam"> -->
+                    <!-- <canvas id="addBtn"></canvas>  -->
+                <!-- </div> -->
+                <!-- <div class="button add" id="addTeam"></div> -->
                 <div class="button start disabled" id="startGame">Начать игру</div>
             </div>
         </div>
         
         <div class="game-board" id="gameBoard">
             <div class="categories" id="categories">
-                <!-- Категории и вопросы будут здесь -->
             </div>
             
             <div class="teams-score" id="teamsScore">
-                <!-- Счет команд будет здесь -->
             </div>
         </div>
     </div>
     
-    <!-- Модальное окно с вопросом -->
     <div class="modal" id="questionModal">
         <div class="modal-content">
             <div class="button close-modal" id="closeModal">&times;</div>
             <div class="question-text" id="modalQuestionText"></div>
-            <!-- <div class="timer" id="timer">60</div> -->
+
             <div class="answer" id="correctAnswer"></div>
             <div class="teams-score" id="modalTeamsScore"></div>
             <div class="controls">
@@ -53,7 +51,6 @@
         </div>
     </div>
 
-        <!-- Модальное окно победителя -->
     <div class="modal" id="winnerModal">
         <div class="modal-content winner-content">
             <h2 id="winnerTitle">Победитель!</h2>
@@ -61,7 +58,9 @@
             <div class="button restart" id="restartGame">Начать новую игру</div>
         </div>
     </div>
+
+
     
-    <script type ="module"src="./js/homeStart.js"></script>
+    <script type ="module" src="./js/homeStart.js"></script>
 </body>
 </html>

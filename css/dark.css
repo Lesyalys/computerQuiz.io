@@ -4,8 +4,7 @@ body {
     font-family: 'Arial', sans-serif;
     /* background-color: #F8F9FA; */
     background-image: url('../public/imgDark/1922.png');
-    /* background-color: #0a59ae; */
-    color: #e7e7ec;
+    color: #1F4D7F;
     margin: 0;
     padding: 20px;
     transition: all 300ms ease-in-out;
@@ -18,8 +17,8 @@ body {
 
 h1 {
     text-align: center;
-    color: #e7e7ec;
-    background-color: #092f58;
+    color: #1F4D7F ;
+    background-color: #e7e7ec;
     align-content: center;
     /* height: 2em; */
     padding: 20px;
@@ -30,20 +29,16 @@ h1 {
 }
 
 #logoNVSU{
-    width: 10%;
-   object-fit: contain; 
-   display: flex;
-   margin-left: auto;
+    width: 100px;
 }
-#logoNVSU:hover{
-    background-color: #4286cf;
-    border-radius: 5px;
-    transition: all 300ms ease-in-out;
+#them{
+    display: flex;
+    justify-content: center;
 }
 /* Стили для настройки команд */
 .setup {
     text-align: center;
-    background-color: #092f58;
+    background-color: #e7e7ec;
     padding: 20px;
     margin-left: 11%;
     margin-right: 11%;
@@ -110,11 +105,11 @@ input {
 }
 
 .button.add {
-    background-color: #29856e;
+    background-color: rgba(13, 165, 64, 0);
 }
 
 .button.add:hover {
-    background-color: #0e4739;
+    background-color: rgba(14, 177, 68, 0);
 }
 
 .button.add.disabled {
@@ -135,30 +130,43 @@ input {
 }
 
 .button.remove {
+    display: flex;
+    justify-content: center;
     margin-left: 15px;
-    width: 25px;
-    height: 25px;
-    background-color: rgb(75, 9, 9);
+    width: 20px;
+    height: 30px;
+    background-color: rgba(165, 13, 13, 0);
+
 }
 
-.button.remove:hover {
-    background-color: rgb(138, 40, 40);
+#delBtn{
+    /* margin-right: 15px; */
+    width: 100px;
+    height: 50px;
 }
+#addTeam{
+    width: 130px;
+}
+
+/* 
+.button.remove:hover {
+    background-color: rgb(177, 14, 14);
+} */
 
 .button.remove.disabled {
     background-color: rgb(88, 8, 8);
 }
 
 .button.start {
-    background-color: rgb(34, 105, 163);
+    background-color: rgb(13, 104, 165);
 }
 
 .button.start:hover {
-    background-color: rgb(19, 75, 121);
+    background-color: rgb(14, 104, 177);
 }
 
 .button.start.disabled {
-    background-color: rgb(7, 62, 107);
+    background-color: rgb(8, 52, 88);
     cursor: not-allowed;
 }
 
@@ -174,21 +182,22 @@ input {
     display: none;
     margin-top: 20px;
 }
-
 .question-image-container {
-    display:flex;
-    justify-content: center;
-    margin-bottom: 1em;
-    /* position: absolute; */
-    /* width: 0px; */
- }
- 
- .question-image {
-     max-width: 20px;
-     max-height: 15px;
-     border-radius: 8px;
-     border: 2px solid #e94560;
- }
+    height: 10em;
+   display:flex;
+   justify-content: center;
+   margin-bottom: 1em;
+   padding-top: 0px;
+   /* position: absolute; */
+   /* width: 0px; */
+}
+
+.question-image {
+    max-width: 20px;
+    max-height: 15px;
+    border-radius: 8px;
+    border: 2px solid #e94560;
+}
 
 .categories {
     display: flex;
@@ -198,7 +207,7 @@ input {
 
 .category {
     flex: 1;
-    background-color: #092f58;
+    background-color: #e7e7ec;
     border-radius: 5px;
     padding: 10px;
     text-align: center;
@@ -218,10 +227,11 @@ input {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    color: #e7e7ec;
 }
 
 .question {
-    background-color: #0f3966;
+    background-color: #366ca5;
     padding: 10px;
     border-radius: 5px;
     text-align: center;
@@ -231,16 +241,19 @@ input {
 
 .question:hover {
     background-color: #0a59ae;
+    box-shadow: 0 0 1em #0455ec;
+    transition: all 300ms;
 }
 
 .question.used {
-    background-color: #0d1539;
+    background-color: #0f3a68;
     color: #666;
     cursor: not-allowed;
 }
 
 /* Стили для модального окна с вопросом */
 .modal {
+    
     display: none;
     position: fixed;
     top: 0;
@@ -254,6 +267,7 @@ input {
 }
 
 .modal-content {
+
     background-color: #1F4D7F;
     /* background-image: url('../public/img/modalBack.png'); */
     justify-items: center;
@@ -274,13 +288,16 @@ input {
 .question-text {
     font-size: 24px;
     margin-bottom: 30px;
-    min-height: 100px;
+    /* min-height: 100px; */
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0px;
+    padding-bottom: 3px;
     background-color: #e7e7ec;
     color: #195B8B;
     font-weight: bold;
     border-radius: 10px;
     align-content: center;
-    padding-left: 5px;
 }
 
 .timer {
@@ -307,10 +324,11 @@ input {
     margin-top: 30px;
     flex-wrap: wrap;
     gap: 15px;
+    color: #1F4D7F;
 }
 
 .team-score {
-    background-color: #092f58;
+    background-color: #e7e7ec;
     padding: 15px;
     border-radius: 5px;
     min-width: 150px;
