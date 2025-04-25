@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Викторина ЭВМ</title>
+    <link rel="icon" type="image/x-icon" href="/computerQuiz.io/assets/study-0E1x-Nen.png">
+  <script type="module" crossorigin src="/computerQuiz.io/assets/index-pzBWYC9c.js"></script>
+  <link rel="stylesheet" crossorigin href="/computerQuiz.io/assets/index-GHIkUgH3.css">
+</head>
+<body>
+
+    <div class="container">
+            <div id="them"> <canvas id ="logoNVSU"><canvas></canvas> </div>
+            <!-- <canvas id ="logoNVSU"><canvas> -->
+            <h1>Своя Игра - Викторина по ЭВМ</h1>
+        
+        <div class="setup">
+            <h2>Настройка команд</h2>
+            <div class="teams-container" id="teamsContainer">
+            </div>
+            <div class="button-area">
+                <canvas id="addTeam"></canvas> 
+                <!-- <div class="button add" id="addTeam"> -->
+                    <!-- <canvas id="addBtn"></canvas>  -->
+                <!-- </div> -->
+                <!-- <div class="button add" id="addTeam"></div> -->
+                <div class="button start disabled" id="startGame">Начать игру</div>
+            </div>
+        </div>
+        
+        <div class="game-board" id="gameBoard">
+            <div class="categories" id="categories">
+            </div>
+            
+            <div class="teams-score" id="teamsScore">
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal" id="questionModal">
+        <div class="modal-content">
+            <div class="button close-modal" id="closeModal">&times;</div>
+            <div class="question-text" id="modalQuestionText"></div>
+
+            <div class="answer" id="correctAnswer"></div>
+            <div class="teams-score" id="modalTeamsScore"></div>
+            <div class="controls">
+                <div class="button" id="showAnswer">Показать ответ</div>
+                <div class="button" id="addPoints">Начислить баллы</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="winnerModal">
+        <div class="modal-content winner-content">
+            <h2 id="winnerTitle">Победитель!</h2>
+            <div class="winner-info" id="winnerInfo"></div>
+            <div class="button restart" id="restartGame">Начать новую игру</div>
+        </div>
+    </div>
+
+
+    
+</body>
+</html>
