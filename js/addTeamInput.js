@@ -23,7 +23,7 @@ export function addTeamInput() {
     const canvasRive = teamInput.querySelector(`#delBtn`);
     const rive = new Rive({
         artboard: 'pasted',
-        src: "../public/rive/deleteBtn.riv",
+        src: "/computerQuiz.io/rive/deleteBtn.riv",
         canvas: canvasRive,
         autoplay: true,
         stateMachines: "sm1",    

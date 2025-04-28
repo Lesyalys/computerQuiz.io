@@ -20,7 +20,7 @@ export function showQuestion(categoryId, questionId) {
         questionContent = `
             <div class="question-text">${question.text}</div>
             <div class="question-image-container">
-                <img src="public/imgQuestion/${question.img}" alt="Иллюстрация к вопросу">
+                <img src="/computerQuiz.io/imgQuestion/${question.img}" alt="Иллюстрация к вопросу">
             </div>
         `;
     }

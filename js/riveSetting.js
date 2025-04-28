@@ -23,7 +23,7 @@ export function riveSet() {
     // const addTeam = document.getElementById('addTeam');
     const addBtn = document.getElementById('addTeam');
     const addRive = new Rive({
-        src: '../public/rive/addBtn.riv',
+        src: '/computerQuiz.io/rive/addBtn.riv',
         canvas : addBtn,
         autoplay : true,
         stateMachines: 'sm1',
@@ -42,43 +42,45 @@ export function riveSet() {
         }
     })
 
-    const logoNVSU = document.getElementById('logoNVSU');
-    const mode = document.getElementById('mode');
-    const logoRive = new Rive({
-        src: '../public/rive/darkLight.riv',
-        canvas : logoNVSU,
-        autoplay : true,
-        stateMachines: 'sm1',
-        onLoad: () => {
-            const input = logoRive.stateMachineInputs('sm1');
-            const trigger1 = input.find(i => i.name === 't1');
-            const trigger2 = input.find(i => i.name === 't2');
+    // const logoNVSU = document.getElementById('logoNVSU');
+    // const mode = document.getElementById('mode');
+    // console.log(logoNVSU, ' ',mode)
+    // const logoRive = new Rive({
+    //     src: '/computerQuiz.io/rive/darkLight.riv',
+    //     canvas : logoNVSU,
+    //     autoplay : true,
+    //     stateMachines: 'sm1',
+    //     onLoad: () => {
+    //         const input = logoRive.stateMachineInputs('sm1');
+    //         const trigger1 = input.find(i => i.name === 't1');
+    //         const trigger2 = input.find(i => i.name === 't2');
 
-            // addBtn.addEventListener('click', () => {
-            //     trigger.fire();
-            // })
-            logoNVSU.onclick = () => {
-                const corHref = mode.getAttribute('href');
+    //         // addBtn.addEventListener('click', () => {
+    //         //     trigger.fire();
+    //         // })
+    //         logoNVSU.onclick = () => {
+    //             console.log('clkick')
+    //             const corHref = mode.getAttribute('href');
 
-                if (corHref === 'css/style.css'){
-                    console.log(logoRive)
-                    trigger1.fire();
-                setTimeout(()=>{
-                    mode.setAttribute('href','css/dark.css')},200)
+    //             if (corHref === 'css/style.css'){
+    //                 console.log(logoRive)
+    //                 trigger1.fire();
+    //             setTimeout(()=>{
+    //                 mode.setAttribute('href','css/dark.css')},200)
                     
         
-                }
-                else if (corHref === 'css/dark.css'){
-                    console.log(logoRive)
-                    trigger2.fire();
-                setTimeout(()=>{
-                    mode.setAttribute('href','css/style.css')},200)
+    //             }
+    //             else if (corHref === 'css/dark.css'){
+    //                 console.log(logoRive)
+    //                 trigger2.fire();
+    //             setTimeout(()=>{
+    //                 mode.setAttribute('href','css/style.css')},200)
         
-                }
+    //             }
                 
-            }
-        }
-    })
+    //         }
+    //     }
+    // })
     
     // console.log(rive)
 }
