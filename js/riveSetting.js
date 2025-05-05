@@ -42,45 +42,67 @@ export function riveSet() {
         }
     })
 
-    // const logoNVSU = document.getElementById('logoNVSU');
-    // const mode = document.getElementById('mode');
-    // console.log(logoNVSU, ' ',mode)
-    // const logoRive = new Rive({
-    //     src: '/computerQuiz.io/rive/darkLight.riv',
-    //     canvas : logoNVSU,
-    //     autoplay : true,
-    //     stateMachines: 'sm1',
-    //     onLoad: () => {
-    //         const input = logoRive.stateMachineInputs('sm1');
-    //         const trigger1 = input.find(i => i.name === 't1');
-    //         const trigger2 = input.find(i => i.name === 't2');
 
-    //         // addBtn.addEventListener('click', () => {
-    //         //     trigger.fire();
-    //         // })
-    //         logoNVSU.onclick = () => {
-    //             console.log('clkick')
-    //             const corHref = mode.getAttribute('href');
+    const themeToggle = document.querySelector('[data-theme-toggle]');
+    const currentTheme = localStorage.getItem('theme') || 'light';
 
-    //             if (corHref === 'css/style.css'){
-    //                 console.log(logoRive)
-    //                 trigger1.fire();
-    //             setTimeout(()=>{
-    //                 mode.setAttribute('href','css/dark.css')},200)
+    // Устанавливаем начальную тему
+    if (currentTheme === 'dark') {
+        themeToggle.href = 'css/dark.css';
+    }
+    function toggleTheme(trigger1,trigger2) {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        
+
+        
+        // Анимация Rive
+        const trigger = newTheme === 'dark' ? trigger1 : trigger2;
+        trigger.fire();
+    }
+    
+
+    const logoNVSU = document.getElementById('logoNVSU');
+    const mode = document.getElementById('mode');
+    
+    console.log(logoNVSU, ' ',mode)
+    const logoRive = new Rive({
+        src: '/computerQuiz.io/rive/darkLight.riv',
+        canvas : logoNVSU,
+        autoplay : true,
+        stateMachines: 'sm1',
+        onLoad: () => {
+            const input = logoRive.stateMachineInputs('sm1');
+            const trigger1 = input.find(i => i.name === 't1');
+            const trigger2 = input.find(i => i.name === 't2');
+
+            // addBtn.addEventListener('click', () => {
+            //     trigger.fire();
+            // })
+            logoNVSU.onclick = () => {
+                console.log('clkick')
+                const isDark = themeToggle.href.includes('dark.css');
+
+                if (isDark){
+                    console.log(logoRive)
+                    trigger1.fire();
+                setTimeout(()=>{toggleTheme(trigger1,trigger2)},200)
                     
         
-    //             }
-    //             else if (corHref === 'css/dark.css'){
-    //                 console.log(logoRive)
-    //                 trigger2.fire();
-    //             setTimeout(()=>{
-    //                 mode.setAttribute('href','css/style.css')},200)
+                }
+                else if (isDark === 'css/dark.css'){
+                    console.log(logoRive)
+                    trigger2.fire();
+                setTimeout(()=>{toggleTheme(trigger1,trigger2)},200)
         
-    //             }
+                }
                 
-    //         }
-    //     }
-    // })
+            }
+        }
+    })
     
     // console.log(rive)
 }
