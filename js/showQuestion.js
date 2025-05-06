@@ -1,9 +1,10 @@
 import {questionsData,state,elements} from'./const.js';
 // import { startTimer } from "./startTimer.js";
 import { updateModalScoreBoard } from "./updateModalScoreBoard.js";
-import { backgroundImages } from './const.js';
+import { backgroundImages, backgroundImages2 } from './const.js';
 import { addPointsToTeam } from './addPointsToTeam.js';
 import { showCorrectAnswer } from './showCorrectAnswer.js';
+import { getCurrentTheme } from './riveSetting.js'
 
 export function showQuestion(categoryId, questionId) {
      // Проверяем, не использован ли уже вопрос
@@ -32,8 +33,18 @@ export function showQuestion(categoryId, questionId) {
     
     
     // Показываем модальное окно
-    const randomBg = backgroundImages[Math.floor(Math.random() * backgroundImages.length)];
+    let them = getCurrentTheme();
+    console.log(them)
+    if (them === 'dark'){
+        const randomBg = backgroundImages[Math.floor(Math.random() * backgroundImages.length)];
     document.querySelector('.modal-content').style.backgroundImage = randomBg;
+    }
+    else if (them === 'light'){
+        const randomBg = backgroundImages2[Math.floor(Math.random() * backgroundImages.length)];
+    document.querySelector('.modal-content').style.backgroundImage = randomBg;
+    }
+    // const randomBg = backgroundImages[Math.floor(Math.random() * backgroundImages.length)];
+    // document.querySelector('.modal-content').style.backgroundImage = randomBg;
     
     // Показываем модальное окно
     elements.modalQuestionText.innerHTML = questionContent;

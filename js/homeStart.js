@@ -11,6 +11,7 @@ import { riveSet } from './riveSetting.js';
 
 function init() {
     // Добавляем первое поле для команды по умолчанию
+    document.body.classList.toggle('theme');
     riveSet();
     addTeamInput();
     

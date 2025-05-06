@@ -2,25 +2,7 @@ import {Rive} from '@rive-app/canvas';
 import {addTeamInput} from './addTeamInput.js';
 
 export function riveSet() {
-    //delitBtn
-    // const canvasRive = document.querySelector('.team-input');
-    // const rive = new Rive({
-    //     artboard: 'pasted',
-    //     src: "../public/rive/deleteBtn.riv",
-    //     canvas: canvasRive,
-    //     autoplay: true,
-    //     stateMachines: "sm1",    
-    //     onLoad: () => {
-    //         const input = rive.stateMachineInputs('sm1');
-    //         const trigger = input.find(i => i.name === 'Trigger 1');
-    //         canvasRive.addEventListener('click', () => {
-    //             trigger.fire();
-    //         })
-    //     }
-    // });
 
-    //addBtn
-    // const addTeam = document.getElementById('addTeam');
     const addBtn = document.getElementById('addTeam');
     const addRive = new Rive({
         src: '/computerQuiz.io/rive/addBtn.riv',
@@ -31,9 +13,6 @@ export function riveSet() {
             const input = addRive.stateMachineInputs('sm1');
             const trigger = input.find(i => i.name === 't1');
 
-            // addBtn.addEventListener('click', () => {
-            //     trigger.fire();
-            // })
             addBtn.onclick = () => {
                 trigger.fire();
                 setTimeout(()=>{addTeamInput()},200)
@@ -43,32 +22,16 @@ export function riveSet() {
     })
 
 
-    const themeToggle = document.querySelector('[data-theme-toggle]');
-    const currentTheme = localStorage.getItem('theme') || 'light';
-
-    // Устанавливаем начальную тему
-    if (currentTheme === 'dark') {
-        themeToggle.href = 'css/dark.css';
-    }
-    function toggleTheme(trigger1,trigger2) {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        
-
-        
-        // Анимация Rive
-        const trigger = newTheme === 'dark' ? trigger1 : trigger2;
-        trigger.fire();
-    }
-    
 
     const logoNVSU = document.getElementById('logoNVSU');
-    const mode = document.getElementById('mode');
-    
-    console.log(logoNVSU, ' ',mode)
+    // function getCurrentTheme(){
+    //     return localStorage.getItem('theme') || 'dark';
+    // }
+
+
+    document.documentElement.setAttribute('data-theme',getCurrentTheme());
+
+
     const logoRive = new Rive({
         src: '/computerQuiz.io/rive/darkLight.riv',
         canvas : logoNVSU,
@@ -79,30 +42,27 @@ export function riveSet() {
             const trigger1 = input.find(i => i.name === 't1');
             const trigger2 = input.find(i => i.name === 't2');
 
-            // addBtn.addEventListener('click', () => {
-            //     trigger.fire();
-            // })
             logoNVSU.onclick = () => {
-                console.log('clkick')
-                const isDark = themeToggle.href.includes('dark.css');
+                const correntTheme = getCurrentTheme();
 
-                if (isDark){
-                    console.log(logoRive)
+                if (correntTheme === 'dark'){
                     trigger1.fire();
-                setTimeout(()=>{toggleTheme(trigger1,trigger2)},200)
-                    
-        
+                    document.documentElement.setAttribute('data-theme', 'light'),
+                    localStorage.setItem('theme','light')
                 }
-                else if (isDark === 'css/dark.css'){
-                    console.log(logoRive)
+
+                else {
                     trigger2.fire();
-                setTimeout(()=>{toggleTheme(trigger1,trigger2)},200)
-        
+                    document.documentElement.setAttribute('data-theme','dark'),
+                    localStorage.setItem('theme','dark')
                 }
                 
             }
         }
     })
-    
-    // console.log(rive)
+
+}
+
+export function getCurrentTheme(){
+    return localStorage.getItem('theme') || 'light';
 }

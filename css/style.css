@@ -1,10 +1,38 @@
 /* colors: #c2e9fc  #e7f6fc*/
 
+:root[data-theme='dark'] {
+    --background-image: url('../public/imgLight/1922.png');
+    --color: #ffffff;
+    --background-color: #1F4D7F;
+    --background-color-question: #183b61;
+    --background-color-hover-question: #2876ca;
+    /* --background-color-steam-score: #183b61; */
+    --background-color-question-used:#122c47;
+    --background-color-gBack: #0c69a4;
+    --background-color-gText: #e0e1e9;
+    --background-color-answer: #388043;
+    --background-color-text-answer: #ffffff;
+}
+
+:root[data-theme='light'] {
+    --background-image: url('../public/imgDark/1922.png');
+    --color: #1F4D7F;
+    --background-color:  #e7e7ec;
+    --background-color-question:  #f8f8f8;
+    --background-color-hover-question: #dcdce2;
+    /* --background-color-steam-score: #dcdce2; */
+    --background-color-question-used:#c1c1c4;
+    --background-color-gBack: #e0e1e9;
+    --background-color-gText: #252833;
+    --background-color-answer: #388043;
+    --background-color-text-answer: #ffffff;
+}
+
 body {
     font-family: 'Arial', sans-serif;
     /* background-color: #F8F9FA; */
-    background-image: url('../public/imgLight/1922.png');
-    color: #e7e7ec;
+    background-image: var(--background-image);
+    color: var(--color);
     margin: 0;
     padding: 20px;
     transition: all 300ms ease-in-out;
@@ -17,8 +45,8 @@ body {
 
 h1 {
     text-align: center;
-    color: #e7e7ec;
-    background-color: #1F4D7F;
+    color: var(--color);
+    background-color: var(--background-color);
     align-content: center;
     /* height: 2em; */
     padding: 20px;
@@ -38,7 +66,7 @@ h1 {
 /* Стили для настройки команд */
 .setup {
     text-align: center;
-    background-color: #1F4D7F;
+    background-color: var(--background-color);
     padding: 20px;
     margin-left: 11%;
     margin-right: 11%;
@@ -207,7 +235,7 @@ input {
 
 .category {
     flex: 1;
-    background-color: #1F4D7F;
+    background-color: var(--background-color);
     border-radius: 5px;
     padding: 10px;
     text-align: center;
@@ -230,7 +258,7 @@ input {
 }
 
 .question {
-    background-color: #0f3966;
+    background-color:var(--background-color-question);
     padding: 10px;
     border-radius: 5px;
     text-align: center;
@@ -239,13 +267,13 @@ input {
 }
 
 .question:hover {
-    background-color: #0a59ae;
-    box-shadow: 0 0 1em #0455ec;
+    background-color: var(--background-color-hover-question);
+    box-shadow:var(--background-color-hover-border-question);
     transition: all 300ms;
 }
 
 .question.used {
-    background-color: #0d1539;
+    background-color: var(--background-color-question-used);
     color: #666;
     cursor: not-allowed;
 }
@@ -278,25 +306,28 @@ input {
     padding-top: 30px;
     padding-bottom: 30px;
     border-radius: 10px;
-    max-width: 800px;
-    width: 90%;
+    /* max-width: 800px; */
+    width: 80%;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
     transition: background-image 0.5s ease;
 }
 
 .question-text {
+    text-align: center;
     font-size: 24px;
     margin-bottom: 30px;
     /* min-height: 100px; */
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 0px;
-    padding-bottom: 3px;
-    background-color: #e7e7ec;
-    color: #195B8B;
+    padding: 10px;
+    background-color:var(--background-color-gBack);
+    color: var(--color);
     font-weight: bold;
     border-radius: 10px;
-    align-content: center;
 }
 
 .timer {
@@ -311,8 +342,8 @@ input {
     font-size: 22px;
     margin-top: 20px;
     padding: 15px;
-    background-color: #1F4D7F;
-    color: #e7e7ec;
+    background-color: var(--background-color-answer);
+    color: var(--background-color-text-answer);
     border-radius: 5px;
     display: none;
 }
@@ -326,7 +357,7 @@ input {
 }
 
 .team-score {
-    background-color: #1F4D7F;
+    background-color:var(--background-color-gBack);
     padding: 15px;
     border-radius: 5px;
     min-width: 150px;
