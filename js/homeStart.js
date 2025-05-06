@@ -5,6 +5,7 @@ import { resetGame } from './resetGame.js';
 import { closeModal } from './closeModal.js';
 import {state,elements} from'./const.js';
 import { riveSet } from './riveSetting.js';
+import {getCurrentTheme} from './riveSetting.js'
 // import { darckShem } from './darckShem.js';
 // import { riveSet } from './riveSetting.js';
 
@@ -12,6 +13,8 @@ import { riveSet } from './riveSetting.js';
 function init() {
     // Добавляем первое поле для команды по умолчанию
     document.body.classList.toggle('theme');
+    const correntshem = getCurrentTheme();
+    document.documentElement.setAttribute('data-theme',correntshem);
     riveSet();
     addTeamInput();
     
